@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WetterApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <div class="app-main">
+        <div class="container">
+            <h1 class="text-center" id="app-title">Wetterabfrage</h1>
+            
+            <div class="form-group" id="search-box">
+                <label for="city-input">Stadt eingeben</label><br><br>
+                <input type="text" class="form-control" id="city-input" placeholder="Stadt eingeben" onkeydown="handleEnter(event)">
+            </div><br>
+            
+            <button class="btn btn-primary btn-dark" id="fetch-btn" onclick="fetchWeather()">Wetter abrufen</button>
+
+            <div id="weather-output" class="alert alert-info mt-3" style="display: none;">
+                <small id="city-name"></small>
+                <h2 id="current-temp" style="font-size: 2.5em; margin-top: 0;"></h2>
+                <p id="weather-description" style="font-size: 1.2em;"></p>
+                <small id="high-low" style="font-size: 1em;"></small>
+                <p id="wind-info" style="font-size: 1.2em;"></p>
+                <p id="humidity-info" style="font-size: 1.2em;"></p>
+                <p id="pressure-info" style="font-size: 1.2em;"></p>
+            </div>
+
+
+<h3 id="hourly-title" style="display: none;">Stündliche Vorhersage</h3>
+<div id="hourly-output" class="container">
+    <div id="hourly-forecast" class="row" style="overflow-x: auto; white-space: nowrap;">
+      
+    </div>
+</div>
+
+     
+            <button class="btn btn-link" id="show-search-btn" onclick="showSearchBox()" style="display: none;">
+                <img src="./ricon.png" alt="Stadt ändern" style="width: 30px; height: 30px;">
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
